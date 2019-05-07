@@ -7,19 +7,22 @@ export default new Vuex.Store({
   state: {
     skillBundles: [
       {
+        id: 1,
         name: 'Running',
         skills: [
           {
+            id: 1,
             name: 'Actual Running',
             activities: [
-              { date: '26-1-2019', time: 0.5 },
-              { date: '30-1-2019', time: 0.5 }
+              { id: 1, date: '26-1-2019', time: 0.5 },
+              { id: 2, date: '30-1-2019', time: 0.5 }
             ]
           },
           {
+            id: 2,
             name: 'Training for Running',
             activities: [
-              { date: '5-2-2019', time: 0.5 }
+              { id: 1, date: '5-2-2019', time: 0.5 }
             ]
           }
         ]

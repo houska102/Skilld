@@ -2,7 +2,7 @@
   <div id="home">
     <skill-bundle
       v-for="bundle in skillBundles"
-      :key="bundle.name"
+      :key="bundle.id"
       :skillBundle="bundle"
     ></skill-bundle>
   </div>

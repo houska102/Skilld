@@ -3,9 +3,10 @@
     <div class="bundle-name">{{skillBundle.name}}</div>
     <div class="bundle-total-time">Total Time: {{totalHoursSpent}}h</div>
     <div class="bundle-skills">
+      <div class="bundle-skills-heading">Trainings:</div>
       <skill
         v-for="skill in skillBundle.skills"
-        :key="skill.name"
+        :key="skill.id"
         :skill="skill"
         :totalHours="totalHoursSpent"
       ></skill>
@@ -52,5 +53,9 @@ export default {
   }
   .bundle-skills {
     margin: 10px 0;
+  }
+  .bundle-skills-heading {
+    font-size: 18px;
+    text-align: left;
   }
 </style>

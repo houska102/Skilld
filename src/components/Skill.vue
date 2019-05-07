@@ -7,7 +7,7 @@
     <div v-show="showActivities" class="skill-activities">
       <activity
         v-for="activity in skill.activities"
-        :key="activity.date"
+        :key="activity.id"
         :activity="activity"
       ></activity>
     </div>
