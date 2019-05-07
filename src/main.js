@@ -4,10 +4,12 @@ import router from './router'
 import store from './store'
 
 import SkillBundle from './components/SkillBundle'
+import Skill from './components/Skill'
 
 Vue.config.productionTip = false
 
 Vue.component('skill-bundle', SkillBundle)
+Vue.component('skill', Skill)
 
 new Vue({
   router,
