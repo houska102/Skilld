@@ -1,12 +1,21 @@
 <template>
-  <div class="home">
-    home
+  <div id="home">
+    {{skillBundles}}
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'home'
+  name: 'home',
+  computed: {
+    skillBundles () {
+      return this.$store.getters.skillBundles
+    }
+  }
 }
 </script>
+
+<style scoped>
+  
+</style>

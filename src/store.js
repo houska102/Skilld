@@ -5,7 +5,25 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    skillBundles: [
+      {
+        name: 'Running',
+        skills: [
+          {
+            name: 'Actual Running',
+            activities: [
+              { date: '26-1-2019', hours: 0.5 },
+              { date: '30-1-2019', hours: 0.5 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  getters: {
+    skillBundles (state) {
+      return state.skillBundles
+    }
   },
   mutations: {
 
