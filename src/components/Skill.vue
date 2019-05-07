@@ -1,9 +1,16 @@
 <template lang="html">
   <div class="skill">
-    <div class="skill-name">
-      {{skill.name}}
+    <div class="skill-heading">
+      <span>{{skill.name}}</span><span>total: {{totalHoursSpent}}h <button @click="showActivities = !showActivities">\/</button></span>
     </div>
     <div :style="precentageStyle"></div>
+    <div v-show="showActivities" class="skill-activities">
+      <activity
+        v-for="activity in skill.activities"
+        :key="activity.date"
+        :activity="activity"
+      ></activity>
+    </div>
   </div>
 </template>
 
@@ -15,6 +22,11 @@ export default {
     },
     totalHours: {
       type: Number
+    }
+  },
+  data () {
+    return {
+      showActivities: false
     }
   },
   computed: {
@@ -43,11 +55,16 @@ export default {
     background:#fafafa;
     text-align: left;
   }
-  .skill-name {
+  .skill-heading {
     padding:5px;
+    display:flex;
+    justify-content: space-between;
   }
   .skill:not(:last-child) {
     border-bottom:1px solid #f0f0f0
 
+  }
+  .skill-activities {
+    transition: all 0.5s;
   }
 </style>
