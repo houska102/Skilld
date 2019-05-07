@@ -1,7 +1,0 @@
-concept:
-  person will have an app where he can track how much time he spent on training individual skills
-
-  total time/last week
-
-example starcraft:
-  marcro: 3h
