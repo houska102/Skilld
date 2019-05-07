@@ -1,31 +1,84 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <div class="nav-item" id="menu">
+        <router-link to="/">Home</router-link>
+      </div>
+      <div class="nav-item" id="actions">
+        <button>+</button>
+      </div>
     </div>
-    <router-view/>
+    <div id="content">
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <style>
+body{
+  padding: 0;
+  margin: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 #nav {
-  padding: 30px;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:40px;
+  background:#696969;
+  display:flex;
+  flex-direction: row;
+  flex-wrap:nowrap;
+  justify-content:space-between;
 }
-
-#nav a {
+#nav div a {
+  box-sizing: border-box;
+  background:rgba(0,0,0,0.3);
+  border-radius: 10px;
+  height:30px;
+  padding:5px 15px;
   font-weight: bold;
-  color: #2c3e50;
+  color: white;
+  text-decoration: none;
+}
+#nav div a:hover {
+  background:rgba(255,255,255,0.3);
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+#nav #menu{
+  align-items: center;
+  padding-left: 10px
+}
+
+#nav #actions{
+  align-items: center;
+  padding-right: 10px
+}
+
+#nav #actions button{
+  width:30px;
+  height:30px;
+  border-radius:15px;
+  background:rgba(0,0,0,0.3);
+  border:none;
+  color:white;
+  font-size: 25px;
+}
+#nav #actions button:hover{
+  background:rgba(255,255,255,0.3)
+}
+
+#content {
+  padding-top:50px;
+}
+
+.nav-item {
+  display:flex;
 }
 </style>
