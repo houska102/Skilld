@@ -1,6 +1,10 @@
 <template>
   <div id="home">
-    {{skillBundles}}
+    <skill-bundle
+      v-for="bundle in skillBundles"
+      :key="bundle.name"
+      :skillBundle="bundle"
+    ></skill-bundle>
   </div>
 </template>
 
@@ -17,5 +21,7 @@ export default {
 </script>
 
 <style scoped>
-  
+  #home{
+    display:flex;
+  }
 </style>

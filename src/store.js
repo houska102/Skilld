@@ -12,8 +12,8 @@ export default new Vuex.Store({
           {
             name: 'Actual Running',
             activities: [
-              { date: '26-1-2019', hours: 0.5 },
-              { date: '30-1-2019', hours: 0.5 }
+              { date: '26-1-2019', time: 0.5 },
+              { date: '30-1-2019', time: 0.5 }
             ]
           }
         ]
