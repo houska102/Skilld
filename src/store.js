@@ -15,6 +15,12 @@ export default new Vuex.Store({
               { date: '26-1-2019', time: 0.5 },
               { date: '30-1-2019', time: 0.5 }
             ]
+          },
+          {
+            name: 'Training for Running',
+            activities: [
+              { date: '5-2-2019', time: 0.5 }
+            ]
           }
         ]
       }
