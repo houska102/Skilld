@@ -18,6 +18,6 @@ new Vue({
   store,
   render: h => h(App),
   created () {
-    store.dispatch('addBundle', { name: 'Vue.js', skills: [] })
+    store.dispatch('loadSkillBundles')
   }
 }).$mount('#app')
