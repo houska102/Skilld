@@ -3,6 +3,17 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+function findFreeId (array) {
+  let start = 1
+  array.every(function (a) {
+    if (start === a.id) {
+      start = a.id + 1
+      return true
+    }
+  })
+  return start
+}
+
 export default new Vuex.Store({
   state: {
     skillBundles: [
@@ -38,17 +49,29 @@ export default new Vuex.Store({
     setSkillBundles (state, payload) {
       state.skillBundles = payload
     },
-    setBundleById (state, payload) {
+    updateBundleById (state, payload) {
       state.skillBundles.reduce((acc, bundle) => {
-        if(bundle.id === payload.id){
+        if (bundle.id === payload.id) {
           acc.push(payload)
         } else {
           acc.push(bundle)
         }
       }, [])
+    },
+    addBundle (state, payload) {
+      let newBundle = payload
+      newBundle.id = findFreeId(state.skillBundles)
+      state.skillBundles.push(newBundle)
+      localStorage.setItem('bundles', JSON.stringify(state.skillBundles))
     }
   },
   actions: {
-
+    loadSkillBundles ({ commit }) {
+      const savedBundles = JSON.parse(localStorage.getItem('bundles'))
+      commit('setSkillBundles', savedBundles)
+    },
+    addBundle ({ commit }, payload) {
+      commit('addBundle', payload)
+    }
   }
 })
