@@ -35,7 +35,18 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-
+    setSkillBundles (state, payload) {
+      state.skillBundles = payload
+    },
+    setBundleById (state, payload) {
+      state.skillBundles.reduce((acc, bundle) => {
+        if(bundle.id === payload.id){
+          acc.push(payload)
+        } else {
+          acc.push(bundle)
+        }
+      }, [])
+    }
   },
   actions: {
 
