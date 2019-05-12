@@ -1,11 +1,18 @@
 <template>
   <div id="app">
+    <dialog-box
+      :open="addBundleDialog"
+      @close="addBundleDialog = false"
+      @confirm="addBundle"
+    >
+      name:<input type="text" v-model="bundleName">
+    </dialog-box>
     <div id="nav">
       <div class="nav-item" id="menu">
         <router-link to="/">Home</router-link>
       </div>
       <div class="nav-item" id="actions">
-        <button>+</button>
+        <button @click="onAddBundleOpen">+</button>
       </div>
     </div>
     <div id="content">
@@ -13,6 +20,25 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      addBundleDialog: false,
+      bundleName: ''
+    }
+  },
+  methods: {
+    onAddBundleOpen () {
+      this.addBundleDialog = true
+    },
+    addBundle () {
+      this.$store.dispatch('addBundle', {name: this.bundleName})
+    }
+  }
+}
+</script>
 
 <style>
 body{

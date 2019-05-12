@@ -60,6 +60,9 @@ export default new Vuex.Store({
     },
     addBundle (state, payload) {
       let newBundle = payload
+      if(!payload.skills){
+        newBundle.skills = []
+      }
       newBundle.id = findFreeId(state.skillBundles)
       state.skillBundles.push(newBundle)
       localStorage.setItem('bundles', JSON.stringify(state.skillBundles))
