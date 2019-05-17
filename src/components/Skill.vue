@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="skill">
     <div class="skill-heading">
-      <span>{{skill.name}}</span><span>total: {{totalHoursSpent}}h <button @click="showActivities = !showActivities">\/</button></span>
+      <span>{{skill.name}}</span><span>total: {{totalHoursSpent}}h <button id="showActivities" @click="showActivities = !showActivities">\/</button></span>
     </div>
     <div :style="precentageStyle"></div>
     <div v-show="showActivities" class="skill-activities">
