@@ -7,8 +7,8 @@
     <div style="display:inline-block;margin: 0 auto;padding: 10px; background: white;margin-top:5%;overflow:stretch">
       <slot></slot>
       <div>
-        <button @click="$emit('close')">close</button>
-        <button @click="$emit('confirm')">confirm</button>
+        <button id="closeButton" @click="$emit('close')">close</button>
+        <button id="confirmButton" @click="$emit('confirm')">confirm</button>
       </div>
     </div>
   </div>
