@@ -39,4 +39,11 @@ describe('Skill component test suite', () => {
     })
   })
 
+  test('showActivities Button toggles the showActivites variable', () => {
+    skill.find('#showActivities').trigger('click')
+    expect(skill.vm.showActivities).toBe(true)
+    skill.find('#showActivities').trigger('click')
+    expect(skill.vm.showActivities).toBe(false)
+  })
+
 })
