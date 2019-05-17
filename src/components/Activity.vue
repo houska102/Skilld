@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'activity',
   props: {
     activity: {
       type: Object

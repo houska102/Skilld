@@ -1,10 +1,15 @@
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Skill from "@/components/Skill"
+import Activity from "@/components/Activity"
+
+const localVue = createLocalVue()
+localVue.component('activity', Activity)
 
 describe('Skill component test suite', () => {
   let skill
   beforeEach(() => {
     skill = shallowMount(Skill, {
+      localVue,
       propsData: {
         totalHours: 4,
         skill: {
