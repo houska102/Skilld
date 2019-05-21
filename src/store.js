@@ -60,7 +60,7 @@ export default new Vuex.Store({
     },
     addBundle (state, payload) {
       let newBundle = payload
-      if(!payload.skills){
+      if (!payload.skills) {
         newBundle.skills = []
       }
       newBundle.id = findFreeId(state.skillBundles)

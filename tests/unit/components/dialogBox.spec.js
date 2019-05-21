@@ -1,10 +1,14 @@
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import dialogBox from "@/components/dialogBox"
+
+const localVue = createLocalVue()
 
 describe('dialog box test suite', () => {
   let dialogBoxComponent
   beforeEach(() => {
-    dialogBoxComponent = shallowMount(dialogBox)
+    dialogBoxComponent = shallowMount(dialogBox, {
+      localVue
+    })
   })
 
   test('dialogBox mounts correctly', () => {

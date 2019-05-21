@@ -34,7 +34,7 @@ export default {
       this.addBundleDialog = true
     },
     addBundle () {
-      this.$store.dispatch('addBundle', {name: this.bundleName})
+      this.$store.dispatch('addBundle', { name: this.bundleName })
       this.addBundleDialog = false
     }
   }
