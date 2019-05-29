@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skill component test suite activity component compiles 1`] = `
+<div
+  class="activity"
+>
+  <span>
+    26-1-2019
+  </span>
+  <span>
+    0.5h
+  </span>
+</div>
+`;
